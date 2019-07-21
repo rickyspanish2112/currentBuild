@@ -1,0 +1,16 @@
+<div>
+  <mat-accordion>
+    <mat-expansion-panel
+      [expanded]="declarationHeaderExpanded === true"
+      (opened)="(declarationHeaderExpanded === true)"
+    >
+      <mat-expansion-panel-header
+        [collapsedHeight]="customCollapsedHeight"
+        [expandedHeight]="customExpandedHeight"
+      >
+        <mat-panel-title>{{ pageTitle }}</mat-panel-title>
+      </mat-expansion-panel-header>
+      <app-declaration-type></app-declaration-type>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

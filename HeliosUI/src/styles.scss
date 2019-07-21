@@ -3,7 +3,7 @@
 
 body
 {
-margin: 0;
+margin: 20px;
 }
 
 h4 {
@@ -12,6 +12,26 @@ h4 {
   margin-bottom: 0.67em;
   margin-left: 0;
   margin-right: 0;
+  font-weight: bold;
+}
+
+
+* {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px;
+}
+
+label {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px;
+}
+
+input {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px;
+}
+
+mat-panel-title{
   font-weight: bold;
 }
 

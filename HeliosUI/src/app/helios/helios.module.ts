@@ -13,6 +13,9 @@ import { CdsDeclarationComponent } from './components/cds-declaraion/cds-declara
 import {DeclarationService} from './service/declaration.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ListService } from './service/list.service';
+import { HeaderComponent } from './components/cds-declaraion/components/header/header.component';
+import { DeclarationTypeComponent } from './components/cds-declaraion/components/header/declarationType/declaration-type.component';
+import { DateControlComponent } from './components/cds-declaraion/components/controls/dateControl/date-control.component';
 
 
 const routes: Routes = [
@@ -36,12 +39,15 @@ const routes: Routes = [
     HeliosComponent,
     SidenavComponent,
     ToolbarComponent,
-    CdsDeclarationComponent
+    CdsDeclarationComponent,
+    HeaderComponent,
+    DeclarationTypeComponent,
+    DateControlComponent
   ],
   imports: [CommonModule,
     HttpClientModule,
     MaterialModule,
-    RouterModule.forChild(routes),
+    RouterModule.forChild(routes)
   ],
     providers: [
       DeclarationService,
