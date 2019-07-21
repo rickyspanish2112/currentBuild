@@ -1,6 +1,5 @@
-import { Iaddress } from '../contracts/iaddress';
 
-export class Address implements Iaddress {
+export class Address {
   id: number;
   title: string;
   street1: string;

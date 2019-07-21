@@ -1,6 +1,4 @@
-import { Iaccount } from '../contracts/iaccount';
-
-export class Account implements Iaccount {
+export class Account {
   id: number;  shortCode: string;
   accountNumber: string;
   externalId: string;
