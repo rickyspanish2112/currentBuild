@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "code": "DOZ",
+    "name":"ASM UK Ltd"
+  },
+  {
+    "id": 2,
+    "code": "DDZ",
+    "name":"Schenker UK Ltd"
+  },
+  {
+    "id": 3,
+    "code": "ZCF",
+    "name":"Malta Court"
+  },
+  {
+    "id": 4,
+    "code": "YYT",
+    "name":"Daves Turner"
+  }
+]

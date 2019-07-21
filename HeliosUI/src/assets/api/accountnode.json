@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "node": "Account",
+    "avatar":"folder",
+    "nodeRouteIdentifier": "account"
+  },
+  {
+    "id": 2,
+    "node": "Addresses",
+    "avatar":"meeting_room",
+    "nodeRouteIdentifier": "addresses"
+
+  },
+  {
+    "id": 5,
+    "node": "Contacts",
+    "avatar":"group",
+    "nodeRouteIdentifier": "contacts"
+  },
+  {
+    "id": 8,
+    "node": "Account Notes",
+    "avatar":"note",
+    "nodeRouteIdentifier": "AddressesComponent4"
+  },
+  {
+    "id": 1,
+    "node": "Products",
+    "avatar":"shopping_basket",
+    "nodeRouteIdentifier": "AddressesComponent5"
+  },
+  {
+    "id": 2,
+    "node": "NCTS",
+    "avatar":"airport_shuttle",
+    "nodeRouteIdentifier": "AddressesComponent6"
+
+  },
+  {
+    "id": 5,
+    "node": "Job Costing",
+    "avatar":"account_balance",
+    "nodeRouteIdentifier": "AddressesComponent"
+  },
+  {
+    "id": 6,
+    "node": "Declarations",
+    "avatar":"flight_land",
+    "nodeRouteIdentifier": "declarations"
+  }
+]

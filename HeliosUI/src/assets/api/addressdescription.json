@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Primary"
+
+  },
+  {
+    "id": 2,
+    "name": "Delivery Address"
+  },
+  {
+    "id": 5,
+    "name": "Collection Address"
+  },
+  {
+    "id": 8,
+    "name": "Invoice Address"
+  },
+  {
+    "id": 9,
+    "name": "Head Office"
+  }
+]

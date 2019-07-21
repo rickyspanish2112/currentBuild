@@ -1,0 +1,57 @@
+[
+  {
+    "Id": 1,
+    "title": "Primary Address",
+    "street1": "ASM UK Ltd",
+    "street2": "Ashford House",
+    "street3": "41 - 45 Church Rd",
+    "county": "Middlesex",
+    "postCode": "TW15 2TQ",
+    "country": "United Kingdom",
+    "isPrimary": true
+  },
+  {
+    "Id": 2,
+    "title": "Delivery Address",
+    "street1": "Strret1",
+    "street2": "Street2",
+    "street3": "Street3",
+    "county": "Surrey",
+    "postCode": "SW12 N25",
+    "country": "United Kingdom",
+    "isPrimary": false
+  },
+  {
+    "Id": 5,
+    "title": "Collection Address",
+    "street1": "Street1a",
+    "street2": "Street2",
+    "street3": "Street3",
+    "county": "Mordor",
+    "postCode": "XC2 5HN",
+    "country": "Middle Earth",
+    "isPrimary": false
+  },
+  {
+    "Id": 8,
+    "title": "Invoice Address",
+    "street1": "Street1",
+    "street2": "Street2",
+    "street3": "Street3",
+    "county": "Hobbiton",
+    "postCode": "DS2 5GF",
+    "country": "Middle Earth",
+    "isPrimary": false
+  },
+  {
+    "Id": 10,
+    "title": "Deliver Address",
+    "street1": "Street1b",
+    "street2": "Street2",
+    "street3": "Street3",
+    "county": "Brie",
+    "postCode": "TR6 2MJ",
+    "country": "Middle Earth",
+    "isPrimary": false
+  }
+]

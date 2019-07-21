@@ -1,0 +1,18 @@
+{
+    "id": 1,
+    "accountNumber": "123456",
+    "externalId": "GDN-0011",
+    "accountName": "Fred Inc",
+    "shortCode": "FredInc",
+    "mainTelephone": "0205404408",
+    "fax": "01784255021",
+    "accountType": "Import",
+    "relationship": "Customer",
+	"country": "United Kingdom",
+	"defaultCurrencyCode": "GBP",
+	"tin": "gb123456789000",
+	"website": "www.asm.org.uk",
+	"createdBy": "api",
+	"expiryDate": "March 18, 2016"
+  }
+
