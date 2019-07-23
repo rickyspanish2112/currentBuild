@@ -16,6 +16,8 @@ import { ListService } from './service/list.service';
 import { HeaderComponent } from './components/cds-declaraion/components/header/header.component';
 import { DeclarationTypeComponent } from './components/cds-declaraion/components/header/declarationType/declaration-type.component';
 import { DateControlComponent } from './components/cds-declaraion/components/controls/dateControl/date-control.component';
+import { TransportInfoComponent } from './components/cds-declaraion/components/header/transportInfo/transport-info.component';
+import { ValuebuildupComponent } from './components/cds-declaraion/components/header/valueBuildup/valuebuildup.component';
 
 
 const routes: Routes = [
@@ -42,7 +44,9 @@ const routes: Routes = [
     CdsDeclarationComponent,
     HeaderComponent,
     DeclarationTypeComponent,
-    DateControlComponent
+    DateControlComponent,
+    TransportInfoComponent,
+    ValuebuildupComponent
   ],
   imports: [CommonModule,
     HttpClientModule,
