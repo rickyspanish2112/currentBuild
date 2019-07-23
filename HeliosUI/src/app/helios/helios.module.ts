@@ -18,6 +18,7 @@ import { DeclarationTypeComponent } from './components/cds-declaraion/components
 import { DateControlComponent } from './components/cds-declaraion/components/controls/dateControl/date-control.component';
 import { TransportInfoComponent } from './components/cds-declaraion/components/header/transportInfo/transport-info.component';
 import { ValuebuildupComponent } from './components/cds-declaraion/components/header/valueBuildup/valuebuildup.component';
+import { PartyControlComponent } from './components/cds-declaraion/components/controls/partycontrol/party-control.component';
 
 
 const routes: Routes = [
@@ -46,7 +47,8 @@ const routes: Routes = [
     DeclarationTypeComponent,
     DateControlComponent,
     TransportInfoComponent,
-    ValuebuildupComponent
+    ValuebuildupComponent,
+    PartyControlComponent
   ],
   imports: [CommonModule,
     HttpClientModule,
