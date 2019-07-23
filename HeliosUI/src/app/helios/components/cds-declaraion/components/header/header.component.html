@@ -11,6 +11,14 @@
         <mat-panel-title>{{ pageTitle }}</mat-panel-title>
       </mat-expansion-panel-header>
       <app-declaration-type></app-declaration-type>
+      <div class="flex-container" style="border: 2px red solid; height: 100px; margin-top: 5px;">
+        <div class="transportInfoFlexItem" style="border: 2px blue solid">
+          <app-transport-info ></app-transport-info>
+        </div>
+        <div class="valueBuildUpFlexitem" style="border: 2px blue solid">
+        <app-valuebuildup></app-valuebuildup>
+        </div>
+      </div>
     </mat-expansion-panel>
   </mat-accordion>
 </div>
