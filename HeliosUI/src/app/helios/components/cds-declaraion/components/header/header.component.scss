@@ -1,14 +1,19 @@
+.sectionHeader {
+  font-weight: bold;
+}
+
+
 .flex-container {
   display: flex;
   flex-direction: row;
- // justify-content: space-between;
+  // justify-content: space-between;
   text-align: right;
   margin-top: 10px;
   flex-wrap: wrap;
 }
 
 .transportInfoFlexItem {
-  flex-grow: 1;
+  flex-grow: 5;
   border-radius: 7px;
 }
 
@@ -19,31 +24,31 @@
 
 }
 
-.partyExpansionPanel{
+.partyExpansionPanel {
   width: 570px;
   margin: 5px;
 }
 
 .partyLabelTitle {
   font-weight: bold;
-  }
+}
 
-  .shortCodeLabel {
-    margin-left: 10px;
-  }
+.shortCodeLabel {
+  margin-left: 10px;
+}
 
-  .shortCodeInput {
-    margin-top: 1px;
-    margin-left: 3px;
-    width: 80px;
-  }
+.shortCodeInput {
+  margin-top: 1px;
+  margin-left: 3px;
+  width: 80px;
+}
 
-  .nameLabel {
-    margin-left: 10px;
-  }
+.nameLabel {
+  margin-left: 10px;
+}
 
-  .nameInput {
-    margin-top: 1px;
-    margin-left: 3px;
-    width: 150px;
-  }
+.nameInput {
+  margin-top: 1px;
+  margin-left: 3px;
+  width: 150px;
+}

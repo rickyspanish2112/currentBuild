@@ -3,7 +3,7 @@
     <mat-expansion-panel [expanded]="declarationHeaderExpanded === true"
       (opened)="(declarationHeaderExpanded === true)">
       <mat-expansion-panel-header [collapsedHeight]="customCollapsedHeight" [expandedHeight]="customExpandedHeight">
-        <mat-panel-title>{{ pageTitle }}</mat-panel-title>
+        <mat-panel-title class="sectionHeader">{{ pageTitle }}</mat-panel-title>
       </mat-expansion-panel-header>
       <app-declaration-type></app-declaration-type>
 
@@ -12,7 +12,11 @@
           <mat-expansion-panel class="partyExpansionPanel">
             <mat-expansion-panel-header>
               <label for="exporterTitle" class="partyLabelTitle">Exporter [02]</label>
+<<<<<<< HEAD
               <label for="shortCode" class="shortCodeLabel">Short Code: </label>
+=======
+              <label for="shortCode" class="shortCodeLabel">Short Code:</label>
+>>>>>>> c2f6d2019bea1405f4af5b77487f8ea992eb3485
               <input matInput aria-label="shortCode" class="shortCodeInput" />
               <label for="name" class="nameLabel">Name: </label>
               <input matInput aria-label="name" class="nameInput" />
@@ -25,8 +29,12 @@
             <mat-expansion-panel-header>
               <mat-panel-title class="matPanelTitle">
                 <label for="exporterTitle" class="partyLabelTitle">Importer [08]</label>
+<<<<<<< HEAD
                 <label for="shortCode" class="shortCodeLabel">Short Code:
                 </label>
+=======
+                <label for="shortCode" class="shortCodeLabel">Short Code:</label>
+>>>>>>> c2f6d2019bea1405f4af5b77487f8ea992eb3485
                 <input matInput aria-label="shortCode" class="shortCodeInput" />
                 <label for="name" class="nameLabel">Name: </label>
                 <input matInput aria-label="name" class="nameInput" />
@@ -96,11 +104,11 @@
       </div>
 
       <!-- Value buildup / Transport info section -->
-      <div class="flex-container" style="width: 100%;">
-        <div class="transportInfoFlexItem" style="height: 20px; border: 2px">
+      <div class="flex-container">
+        <div class="transportInfoFlexItem" style="border: red 2px solid;">
           <app-transport-info></app-transport-info>
         </div>
-        <div class="valueBuildUpFlexitem" style="border: 2px;">
+        <div class="valueBuildUpFlexitem" style="border: red 2px solid;">
           <app-valuebuildup></app-valuebuildup>
         </div>
       </div>
