@@ -1,7 +1,7 @@
 <div>
   <mat-accordion>
     <mat-expansion-panel [expanded]="declarationHeaderExpanded === true"
-      (opened)="(declarationHeaderExpanded === true)" >
+      (opened)="(declarationHeaderExpanded === true)">
       <mat-expansion-panel-header [collapsedHeight]="customCollapsedHeight" [expandedHeight]="customExpandedHeight">
         <mat-panel-title class="sectionHeader">{{ pageTitle }}</mat-panel-title>
       </mat-expansion-panel-header>
@@ -10,98 +10,97 @@
       <div class="flex-container">
         <mat-accordion style="flex-grow: 1" style="border: 2px">
           <mat-expansion-panel class="partyExpansionPanel">
-              <mat-expansion-panel-header >
-                  <label for="exporterTitle" class="partyLabelTitle">Exporter [02]</label>
-                  <label for="shortCode" class="shortCodeLabel">Short Code:</label>
-                  <input matInput aria-label="shortCode" class="shortCodeInput" />
-                  <label for="name" class="nameLabel">Name: </label>
-                  <input matInput aria-label="name" class="nameInput" />
-              </mat-expansion-panel-header>
-              <app-party-control></app-party-control>
+            <mat-expansion-panel-header>
+              <label for="exporterTitle" class="partyLabelTitle">Exporter [02]</label>
+              <label for="shortCode" class="shortCodeLabel">Short Code:</label>
+              <input matInput aria-label="shortCode" class="shortCodeInput" />
+              <label for="name" class="nameLabel">Name: </label>
+              <input matInput aria-label="name" class="nameInput" />
+            </mat-expansion-panel-header>
+            <app-party-control></app-party-control>
           </mat-expansion-panel>
         </mat-accordion>
         <mat-accordion style="flex-grow: 1" style="border: 2px">
-            <mat-expansion-panel class="partyExpansionPanel">
-              <mat-expansion-panel-header>
-                <mat-panel-title class="matPanelTitle">
-                  <label for="exporterTitle" class="partyLabelTitle">Importer [08]</label>
-                  <label for="shortCode" class="shortCodeLabel">Short Code:</label>
-                  <input matInput aria-label="shortCode" class="shortCodeInput" />
-                  <label for="name" class="nameLabel">Name: </label>
-                  <input matInput aria-label="name" class="nameInput" />
-                </mat-panel-title>
-              </mat-expansion-panel-header>
-              <app-party-control></app-party-control>
-            </mat-expansion-panel>
-          </mat-accordion>
-          <mat-accordion style="flex-grow: 1" style="border: 2px">
-              <mat-expansion-panel class="partyExpansionPanel">
-                <mat-expansion-panel-header>
-                  <mat-panel-title class="matPanelTitle">
-                    <label for="declarantTitle" class="partyLabelTitle">Declarant [14]</label>
-                    <label for="shortCode" class="shortCodeLabel">Short Code:</label>
-                    <input matInput aria-label="shortCode" class="shortCodeInput" />
-                    <label for="name" class="nameLabel">Name: </label>
-                    <input matInput aria-label="name" class="nameInput" />
-                  </mat-panel-title>
-                </mat-expansion-panel-header>
-                <app-party-control></app-party-control>
-              </mat-expansion-panel>
-            </mat-accordion>
+          <mat-expansion-panel class="partyExpansionPanel">
+            <mat-expansion-panel-header>
+              <mat-panel-title class="matPanelTitle">
+                <label for="exporterTitle" class="partyLabelTitle">Importer [08]</label>
+                <label for="shortCode" class="shortCodeLabel">Short Code:</label>
+                <input matInput aria-label="shortCode" class="shortCodeInput" />
+                <label for="name" class="nameLabel">Name: </label>
+                <input matInput aria-label="name" class="nameInput" />
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <app-party-control></app-party-control>
+          </mat-expansion-panel>
+        </mat-accordion>
+        <mat-accordion style="flex-grow: 1" style="border: 2px">
+          <mat-expansion-panel class="partyExpansionPanel">
+            <mat-expansion-panel-header>
+              <mat-panel-title class="matPanelTitle">
+                <label for="declarantTitle" class="partyLabelTitle">Declarant [14]</label>
+                <label for="shortCode" class="shortCodeLabel">Short Code:</label>
+                <input matInput aria-label="shortCode" class="shortCodeInput" />
+                <label for="name" class="nameLabel">Name: </label>
+                <input matInput aria-label="name" class="nameInput" />
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <app-party-control></app-party-control>
+          </mat-expansion-panel>
+        </mat-accordion>
       </div>
 
       <div class="flex-container">
-          <mat-accordion style="flex-grow: 1" style="border: 2px">
-            <mat-expansion-panel class="partyExpansionPanel">
-                <mat-expansion-panel-header >
-                    <label for="exporterTitle" class="partyLabelTitle">Seller [02]</label>
-                    <label for="shortCode" class="shortCodeLabel">Short Code:  </label>
-                    <input matInput aria-label="shortCode" class="shortCodeInput" />
-                    <label for="name" class="nameLabel">Name: </label>
-                    <input matInput aria-label="name" class="nameInput" />
-                </mat-expansion-panel-header>
-                <app-party-control></app-party-control>
-            </mat-expansion-panel>
-          </mat-accordion>
-          <mat-accordion style="flex-grow: 1" style="border: 2px">
-              <mat-expansion-panel class="partyExpansionPanel">
-                <mat-expansion-panel-header>
-                  <mat-panel-title class="matPanelTitle">
-                    <label for="exporterTitle" class="partyLabelTitle">Buyer [08]</label>
-                    <label for="shortCode" class="shortCodeLabel"
-                      >Short Code:
-                    </label>
-                    <input matInput aria-label="shortCode" class="shortCodeInput" />
-                    <label for="name" class="nameLabel">Name: </label>
-                    <input matInput aria-label="name" class="nameInput" />
-                  </mat-panel-title>
-                </mat-expansion-panel-header>
-                <app-party-control></app-party-control>
-              </mat-expansion-panel>
-            </mat-accordion>
-            <mat-accordion style="flex-grow: 1" style="border: 2px">
-                <mat-expansion-panel class="partyExpansionPanel">
-                  <mat-expansion-panel-header>
-                    <mat-panel-title class="matPanelTitle">
-                      <label for="declarantTitle" class="partyLabelTitle">Repres. [14]</label>
-                      <label for="shortCode" class="shortCodeLabel">Short Code:</label>
-                      <input matInput aria-label="shortCode" class="shortCodeInput" />
-                      <label for="name" class="nameLabel">Name: </label>
-                      <input matInput aria-label="name" class="nameInput" />
-                    </mat-panel-title>
-                  </mat-expansion-panel-header>
-                  <app-party-control></app-party-control>
-                </mat-expansion-panel>
-              </mat-accordion>
-        </div>
+        <mat-accordion style="flex-grow: 1" style="border: 2px">
+          <mat-expansion-panel class="partyExpansionPanel">
+            <mat-expansion-panel-header>
+              <label for="exporterTitle" class="partyLabelTitle">Seller [02]</label>
+              <label for="shortCode" class="shortCodeLabel">Short Code: </label>
+              <input matInput aria-label="shortCode" class="shortCodeInput" />
+              <label for="name" class="nameLabel">Name: </label>
+              <input matInput aria-label="name" class="nameInput" />
+            </mat-expansion-panel-header>
+            <app-party-control></app-party-control>
+          </mat-expansion-panel>
+        </mat-accordion>
+        <mat-accordion style="flex-grow: 1" style="border: 2px">
+          <mat-expansion-panel class="partyExpansionPanel">
+            <mat-expansion-panel-header>
+              <mat-panel-title class="matPanelTitle">
+                <label for="exporterTitle" class="partyLabelTitle">Buyer [08]</label>
+                <label for="shortCode" class="shortCodeLabel">Short Code:
+                </label>
+                <input matInput aria-label="shortCode" class="shortCodeInput" />
+                <label for="name" class="nameLabel">Name: </label>
+                <input matInput aria-label="name" class="nameInput" />
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <app-party-control></app-party-control>
+          </mat-expansion-panel>
+        </mat-accordion>
+        <mat-accordion style="flex-grow: 1" style="border: 2px">
+          <mat-expansion-panel class="partyExpansionPanel">
+            <mat-expansion-panel-header>
+              <mat-panel-title class="matPanelTitle">
+                <label for="declarantTitle" class="partyLabelTitle">Repres. [14]</label>
+                <label for="shortCode" class="shortCodeLabel">Short Code:</label>
+                <input matInput aria-label="shortCode" class="shortCodeInput" />
+                <label for="name" class="nameLabel">Name: </label>
+                <input matInput aria-label="name" class="nameInput" />
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <app-party-control></app-party-control>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
 
       <!-- Value buildup / Transport info section -->
-       <div class="flex-container">
+      <div class="flex-container">
         <div class="transportInfoFlexItem" style="border: red 2px solid;">
-          <app-transport-info ></app-transport-info>
+          <app-transport-info></app-transport-info>
         </div>
         <div class="valueBuildUpFlexitem" style="border: red 2px solid;">
-        <app-valuebuildup></app-valuebuildup>
+          <app-valuebuildup></app-valuebuildup>
         </div>
       </div>
     </mat-expansion-panel>
