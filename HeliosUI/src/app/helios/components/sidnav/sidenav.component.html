@@ -1,6 +1,6 @@
 <mat-drawer-container class="app-sidenav-container" autosize>
-  <mat-drawer #drawer class="app-sidenav mat-elevation-z10"
-  [opened]="!isScreenSmall()" [mode]="isScreenSmall() ? 'over' : 'side'">
+  <mat-drawer #drawer class="app-sidenav mat-elevation-z10" [opened]="!isScreenSmall()"
+    [mode]="isScreenSmall() ? 'over' : 'side'">
     <!-- <p>Auto-resizing sidenav</p> -->
     <mat-toolbar color="primary">
       Helios Modules
@@ -8,10 +8,10 @@
 
     <mat-nav-list>
       <mat-list-item *ngFor="let node of accountNodes">
-         <a matLine routerLink="{{node.nodeRouteIdentifier}}" routerLinkActive="router-link-active" >
+        <a matLine routerLink="{{node.nodeRouteIdentifier}}" routerLinkActive="router-link-active">
           <mat-icon matListIcon>{{node.avatar}}</mat-icon> {{node.node}}
-         </a>
-      <!--    <button mat-icon-button (click)="showInfo(node)">
+        </a>
+        <!--    <button mat-icon-button (click)="showInfo(node)">
             <mat-icon>info</mat-icon>
          </button> -->
       </mat-list-item>
@@ -23,9 +23,8 @@
     <app-toolbar (toggleSidenav)="drawer.toggle()"></app-toolbar>
 
     <div class="wrapper">
-        <router-outlet></router-outlet>
+      <router-outlet></router-outlet>
     </div>
   </div>
 
 </mat-drawer-container>
-
