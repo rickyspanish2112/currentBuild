@@ -12,7 +12,6 @@ export class DeclarationService {
 
   constructor(private http: HttpClient) { }
 
-
   getAllDeclarationTypes() {
     const declarationTypesUrl = '../../../assets/api/declarationtypes.json';
 

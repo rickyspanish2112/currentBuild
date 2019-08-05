@@ -1,0 +1,14 @@
+[
+  {
+    "Id": 1,
+    "value": "10 - IMP Ship identification number"
+  },
+  {
+    "Id": 2,
+    "value": "11 - Name of sea going-vessel"
+  },
+  {
+    "Id": 3,
+    "value": "20 - Wagon numner"
+  }
+]
