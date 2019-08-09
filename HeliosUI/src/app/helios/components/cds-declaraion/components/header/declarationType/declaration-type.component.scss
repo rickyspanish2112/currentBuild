@@ -36,7 +36,7 @@ label {
 .accptDateInput {
   height: 15px;
   border: 1px gray solid;
-  width: 30%;
+  width: 50%;
 }
 
 .dropdownpPopUp {
@@ -44,4 +44,7 @@ label {
   font-size: 12px;
 }
 
+::ng-deep .mat-form-field-underline {
+  display: none;
+}
 

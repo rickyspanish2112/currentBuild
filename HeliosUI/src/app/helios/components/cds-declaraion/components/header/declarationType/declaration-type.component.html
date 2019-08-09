@@ -1,6 +1,6 @@
 <form>
   <div class="flex-container">
-    <div style="flex-grow:3 ;height: 60px;">
+    <div style="flex-grow:1; height: 60px;">
       <mat-form-field style="width: 100%;">
         <label for="traderRef">Declaration Type [01]: </label>
         <input matInput [matAutocomplete]="auto" [formControl]="typeCtrl" class="delcarationTypeInput">
@@ -11,7 +11,7 @@
         </mat-autocomplete>
       </mat-form-field>
     </div>
-    <div style="flex-grow:2; height: 60px;">
+    <div style="flex-grow:0.5; height: 60px;">
       <mat-form-field style="width: 100%;">
         <label for="traderRef">Badge: </label>
         <input matInput [matAutocomplete]="auto" [formControl]="typeCtrl" class="badgeInput">
@@ -22,17 +22,17 @@
         </mat-autocomplete>
       </mat-form-field>
     </div>
-    <div style="flex-grow:5; height: 60px;">
+    <div style="flex-grow:1; height: 60px;">
       <mat-form-field style="width: 100%;">
-      <label for="traderRef">Trader Reference [07]: </label>
+      <label for="traderRef">Trader Ref. [07]: </label>
       <input matInput class="traderRefInput">
     </mat-form-field>
     </div>
-    <div style="height: 60px; width: 370px;">
-      <mat-form-field style="width: 100%;">
+    <div style="height: 60px; flex-grow:1;">
+      <mat-form-field style="width: 75%;">
         <label for="picker">Acct. Date [07]: </label>
         <input matInput [matDatepicker]="picker" class="accptDateInput">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker-toggle matSuffix [for]="picker" style="float: left;"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
     </div>
