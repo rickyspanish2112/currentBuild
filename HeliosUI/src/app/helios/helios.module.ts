@@ -19,6 +19,7 @@ import { DateControlComponent } from './components/cds-declaraion/components/con
 import { TransportInfoComponent } from './components/cds-declaraion/components/header/transportInfo/transport-info.component';
 import { ValuebuildupComponent } from './components/cds-declaraion/components/header/valueBuildup/valuebuildup.component';
 import { PartyControlComponent } from './components/cds-declaraion/components/controls/partycontrol/party-control.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 const routes: Routes = [
@@ -53,7 +54,9 @@ const routes: Routes = [
   imports: [CommonModule,
     HttpClientModule,
     MaterialModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    FormsModule,
+    ReactiveFormsModule,
   ],
     providers: [
       DeclarationService,

@@ -1,19 +1,28 @@
-<div class="flex-container" style="width: 1000px;">
-  <div class="flex-container">
-    <label  for="type"> Decln Type[01]: </label>
-    <input style="flex-grow: 0.5; width: 30px;" name="type">
-  </div>
-  <div class="flex-container">
-      <label  for="traderRef"> Trader Reference[07]: </label>
-      <input style="flex-grow: 3" name="traderRef">
-  </div>
-  <div  class="flex-container">
+<form style="border: blue 2px solid; width:80%; height: 50px;">
+  <div class="flex-container" style="width: 100%;">
+    <div class="flex-container">
+      <mat-form-field style="border: purple 2px solid; width: 100%;">
+        <label for="traderRef">Declaration Type [01]: </label>
+        <input matInput [matAutocomplete]="auto" [formControl]="typeCtrl" style="border: red 2px solid; width: 50px;">
+        <mat-autocomplete #auto="matAutocomplete" [panelWidth]="700">
+          <mat-option *ngFor="let type of declarationTypes$ | async" [value]="type.value" class="dropdownpPopUp">
+            <span>{{type.value}}</span>
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </div>
+    <div class="flex-container">
+      <label for="traderRef"> Trader Reference[07]: </label>
+      <input style="flex-grow: 3; border: red 2px solid; height: 10px;" name="traderRef">
+    </div>
+    <div class="flex-container">
       <label for="badge" class="badgeLabel"> Badge: </label>
-      <input style="flex-grow: 0.5; width: 30px;" name="badge">
-  </div>
+      <input style="flex-grow: 0.5; width: 30px; border: red 2px solid; height: 10px;" name="badge">
+    </div>
 
-  <div class="flex-container" >
+    <div class="flex-container">
       <label for="date" class="AcceptanceLabel">Acceptance Date:</label>
-  <input type="date" name="date">
+      <input style="flex-grow: 0.5; width: 30px; border: red 2px solid; height: 10px;" type="date" name="date">
+    </div>
   </div>
-</div>
+</form>
