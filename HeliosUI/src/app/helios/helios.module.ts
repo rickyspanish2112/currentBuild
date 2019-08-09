@@ -20,6 +20,7 @@ import { TransportInfoComponent } from './components/cds-declaraion/components/h
 import { ValuebuildupComponent } from './components/cds-declaraion/components/header/valueBuildup/valuebuildup.component';
 import { PartyControlComponent } from './components/cds-declaraion/components/controls/partycontrol/party-control.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DeclarationtypetrimmerPipe } from './components/cds-declaraion/pipes/declarationtypetrimmer.pipe';
 
 
 const routes: Routes = [
@@ -49,7 +50,8 @@ const routes: Routes = [
     DateControlComponent,
     TransportInfoComponent,
     ValuebuildupComponent,
-    PartyControlComponent
+    PartyControlComponent,
+    DeclarationtypetrimmerPipe
   ],
   imports: [CommonModule,
     HttpClientModule,

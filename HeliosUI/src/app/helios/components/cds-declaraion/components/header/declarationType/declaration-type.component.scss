@@ -1,14 +1,47 @@
+form{
+  width:100%;
+  height: 60px;
+}
+
+label {
+  font-weight: bold;
+}
+
 .flex-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  text-align: right;
+  width: 80%;
 }
 
-.flex-container > label {
-  flex-grow: 1;
-  margin-right: 5px;
-  font-weight: bold;
+
+.delcarationTypeInput {
+  width: 60px;
+  height: 15px;
+  border: 1px gray solid;
+}
+
+.badgeInput {
+  width: 60px;
+  height: 15px;
+  border: 1px gray solid;
+}
+
+.traderRefInput {
+  width: 150px;
+  height: 15px;
+  border: 1px gray solid;
+}
+
+.accptDateInput {
+  height: 15px;
+  border: 1px gray solid;
+  width: 30%;
+}
+
+.dropdownpPopUp {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px;
 }
 
 
