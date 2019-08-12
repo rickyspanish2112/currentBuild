@@ -5,9 +5,12 @@
       <mat-expansion-panel-header [collapsedHeight]="customCollapsedHeight" [expandedHeight]="customExpandedHeight">
         <mat-panel-title class="sectionHeader">{{ pageTitle }}</mat-panel-title>
       </mat-expansion-panel-header>
-      <app-declaration-type></app-declaration-type>
-      <div class="flex-container">
-        <mat-accordion style="flex-grow: 1" style="border: 2px">
+      <div>
+        <app-declaration-type></app-declaration-type>
+      </div>
+
+      <div class="flex-container" style="margin-top: 55px;">
+        <mat-accordion style="flex-grow: 1" style="border-right: 2px">
           <mat-expansion-panel class="partyExpansionPanel">
             <mat-expansion-panel-header>
               <label for="exporterTitle" class="partyLabelTitle">Exporter [02]</label>
@@ -98,7 +101,7 @@
         <div class="transportInfoFlexItem" style="margin-bottom: 15px;">
           <app-transport-info></app-transport-info>
         </div>
-        <div class="valueBuildUpFlexitem" >
+        <div class="valueBuildUpFlexitem">
           <app-valuebuildup></app-valuebuildup>
         </div>
       </div>
