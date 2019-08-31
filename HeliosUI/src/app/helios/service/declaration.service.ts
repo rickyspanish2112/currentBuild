@@ -3,6 +3,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError, tap } from 'rxjs/operators';
 import { Declarationtype } from '../model/declarationtypes';
 import { throwError } from 'rxjs';
+import { Badge } from '../model/badges';
 
 
 @Injectable({
@@ -20,6 +21,22 @@ export class DeclarationService {
       catchError(this.handleError)
     );
   }
+
+  getAllBadges() {
+    const badgeUrl = '../../../assets/api/badges.json';
+
+    return this.http.get<Badge[]>(badgeUrl).pipe(
+      tap(this.doGetBadges()),
+      catchError(this.handleError)
+    );
+  }
+  doGetBadges(): (x: Badge[]) => void {
+    return data =>
+      console.log(
+        'The following declaration types were returned: ' + JSON.stringify(data)
+      );
+  }
+
   private DoGetDeclarationTypes(): (x: Declarationtype[]) => void {
     return data =>
       console.log(

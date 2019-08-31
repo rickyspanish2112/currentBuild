@@ -4,6 +4,7 @@ import { Declarationtype } from 'src/app/helios/model/declarationtypes';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { FormControl } from '@angular/forms';
+import { Badge } from 'src/app/helios/model/badges';
 
 @Component({
   selector: 'app-declaration-type',
@@ -13,6 +14,9 @@ import { FormControl } from '@angular/forms';
 export class DeclarationTypeComponent implements OnInit {
   declarationTypes: Declarationtype[] = [];
   declarationTypes$: Observable<Declarationtype[]>;
+
+  badges: Badge[] = [];
+  badges$: Observable<Badge[]>;
 
   typeCtrl = new FormControl();
 
@@ -37,7 +41,11 @@ export class DeclarationTypeComponent implements OnInit {
     );
   }
 
-
+getBadges() {
+this.declarationService.getAllBadges().subscribe(data => {
+  return (this.badges = data);
+});
+}
 
   getDeclarationTypes() {
     this.declarationService.getAllDeclarationTypes().subscribe(data => {
