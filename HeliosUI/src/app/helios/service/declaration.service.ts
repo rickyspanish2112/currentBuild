@@ -30,7 +30,7 @@ export class DeclarationService {
       catchError(this.handleError)
     );
   }
-  doGetBadges(): (x: Badge[]) => void {
+ private doGetBadges(): (x: Badge[]) => void {
     return data =>
       console.log(
         'The following declaration types were returned: ' + JSON.stringify(data)

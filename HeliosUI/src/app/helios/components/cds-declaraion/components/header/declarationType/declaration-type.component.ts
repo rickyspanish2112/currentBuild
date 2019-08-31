@@ -19,12 +19,13 @@ export class DeclarationTypeComponent implements OnInit {
   badges$: Observable<Badge[]>;
 
   typeCtrl = new FormControl();
+  badgeCtrl = new FormControl();
 
   constructor(private declarationService: DeclarationService ) { }
 
   ngOnInit() {
     this.getDeclarationTypes();
-
+    this.getBadges();
 
     this.declarationTypes$ = this.typeCtrl.valueChanges.pipe(
       map(type =>
@@ -32,6 +33,18 @@ export class DeclarationTypeComponent implements OnInit {
       )
     );
 
+    this.badges$ = this.badgeCtrl.valueChanges.pipe(
+      map(badge => this.filteredBadge(badge))
+    );
+
+  }
+
+  private  filteredBadge(value: string): Badge[] {
+    const filterValue = value.toLocaleLowerCase();
+
+    return this.badges.filter(
+      badge => value.toLowerCase().indexOf(filterValue) === 0
+    );
   }
   private filteredTypes(value: string): Declarationtype[] {
     const filterValue = value.toLowerCase();
