@@ -33,7 +33,7 @@ export class DeclarationService {
  private doGetBadges(): (x: Badge[]) => void {
     return data =>
       console.log(
-        'The following declaration types were returned: ' + JSON.stringify(data)
+        'The following badges were returned: ' + JSON.stringify(data)
       );
   }
 
