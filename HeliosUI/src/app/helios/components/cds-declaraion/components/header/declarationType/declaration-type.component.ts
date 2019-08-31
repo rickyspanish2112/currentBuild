@@ -43,7 +43,7 @@ export class DeclarationTypeComponent implements OnInit {
     const filterValue = value.toLocaleLowerCase();
 
     return this.badges.filter(
-      badge => value.toLowerCase().indexOf(filterValue) === 0
+      badge => badge.code.toLowerCase().indexOf(filterValue) === 0
     );
   }
   private filteredTypes(value: string): Declarationtype[] {
