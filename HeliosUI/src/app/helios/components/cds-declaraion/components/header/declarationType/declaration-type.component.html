@@ -4,7 +4,7 @@
             <label for="declarationType">Declaration Type [01]: </label>
             <input matInput [matAutocomplete]="declaraionTypeAuto" [formControl]="typeCtrl" class="delcarationTypeInput">
             <mat-autocomplete #declaraionTypeAuto="matAutocomplete"  [panelWidth]=670>
-              <mat-option *ngFor="let type of declarationTypes$ | async" [value]="type.value | declarationtypetrimmer">
+              <mat-option *ngFor="let type of declarationTypes$ | async" [value]="type.value | declarationtypetrimmer" style="font-weight: bold;">
                 {{type.value}}
               </mat-option>
             </mat-autocomplete>
