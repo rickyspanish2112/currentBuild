@@ -1,9 +1,9 @@
 <form>
     <div class="flex-container" style="width: 80%;">
         <mat-form-field style="width: 100%; ">
-            <label for="traderRef">Declaration Type [01]: </label>
-            <input matInput [matAutocomplete]="auto" [formControl]="typeCtrl" class="delcarationTypeInput">
-            <mat-autocomplete #auto="matAutocomplete">
+            <label for="declarationType">Declaration Type [01]: </label>
+            <input matInput [matAutocomplete]="declaraionTypeAuto" [formControl]="typeCtrl" class="delcarationTypeInput">
+            <mat-autocomplete #declaraionTypeAuto="matAutocomplete">
               <mat-option *ngFor="let type of declarationTypes$ | async" [value]="type.value | declarationtypetrimmer" class="dropdownpPopUp">
                 {{type.value}}
               </mat-option>
@@ -12,11 +12,11 @@
       </div>
       <div class="flex-container" style="width: 80%;">
           <mat-form-field style="width: 113px; padding-left: 3px; padding-right: 3px;">
-              <label for="traderRef">Badge: </label>
-              <input matInput [matAutocomplete]="auto" [formControl]="typeCtrl" class="delcarationTypeInput">
-              <mat-autocomplete #auto="matAutocomplete">
-                <mat-option *ngFor="let type of declarationTypes$ | async" [value]="type.value | declarationtypetrimmer" class="dropdownpPopUp">
-                  {{type.value}}
+              <label for="badge">Badge: </label>
+              <input matInput [matAutocomplete]="badgeAuto" [formControl]="badgeCtrl" class="badgeInput">
+              <mat-autocomplete #badgeAuto="matAutocomplete" [panelWidth]=670>
+                <mat-option *ngFor="let badge of badges$ | async" [value]="badge.code | declarationtypetrimmer" class="dropdownpPopUp">
+                  {{badge.code}}
                 </mat-option>
               </mat-autocomplete>
             </mat-form-field>
