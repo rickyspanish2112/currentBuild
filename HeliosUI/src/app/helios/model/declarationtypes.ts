@@ -1,6 +1,5 @@
-
-
 export class Declarationtype {
-  id: number;  value: string;
+  id: number;
+  value: string;
 
 }

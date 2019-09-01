@@ -1,7 +1,9 @@
 .sectionHeader {
   font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+  color: #673AB7
 }
-
 
 .flex-container {
   display: flex;
@@ -45,6 +47,7 @@
   margin-top: 1px;
   margin-left: 3px;
   width: 80px;
+  border: 1px gray solid;
 }
 
 .nameLabel {
@@ -55,5 +58,6 @@
   margin-top: 1px;
   margin-left: 3px;
   width: 150px;
+  border: 1px gray solid;
 }
 

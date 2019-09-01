@@ -4,6 +4,7 @@ import { catchError, tap } from 'rxjs/operators';
 import { Declarationtype } from '../model/declarationtypes';
 import { throwError } from 'rxjs';
 import { Badge } from '../model/badges';
+import { ArrivalTransportType } from '../model/arrivaltransporttypes';
 
 
 @Injectable({
@@ -30,6 +31,23 @@ export class DeclarationService {
       catchError(this.handleError)
     );
   }
+
+ getAllArrivalTransportTypes() {
+  const arrivalTransportTypes = '../../../assets/api/arrivaltransporttype.json';
+
+  return this.http.get<ArrivalTransportType[]>(arrivalTransportTypes).pipe(
+    tap(this.doGetArrivalTypes()),
+    catchError(this.handleError)
+  );
+ }
+
+ private doGetArrivalTypes(): (x: ArrivalTransportType[]) => void {
+    return data =>
+    console.log(
+      'The following arrival transport types were returned: ' + JSON.stringify(data)
+    );
+  }
+
  private doGetBadges(): (x: Badge[]) => void {
     return data =>
       console.log(
