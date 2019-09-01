@@ -3,8 +3,8 @@
         <mat-form-field style="width: 100%; ">
             <label for="declarationType">Declaration Type [01]: </label>
             <input matInput [matAutocomplete]="declaraionTypeAuto" [formControl]="typeCtrl" class="delcarationTypeInput">
-            <mat-autocomplete #declaraionTypeAuto="matAutocomplete">
-              <mat-option *ngFor="let type of declarationTypes$ | async" [value]="type.value | declarationtypetrimmer" class="dropdownpPopUp">
+            <mat-autocomplete #declaraionTypeAuto="matAutocomplete"  [panelWidth]=670>
+              <mat-option *ngFor="let type of declarationTypes$ | async" [value]="type.value | declarationtypetrimmer">
                 {{type.value}}
               </mat-option>
             </mat-autocomplete>
@@ -14,8 +14,8 @@
           <mat-form-field style="width: 113px; padding-left: 3px; padding-right: 3px;">
               <label for="badge">Badge: </label>
               <input matInput [matAutocomplete]="badgeAuto" [formControl]="badgeCtrl" class="badgeInput">
-              <mat-autocomplete #badgeAuto="matAutocomplete" [panelWidth]=670>
-                <mat-option *ngFor="let badge of badges$ | async" [value]="badge.code | declarationtypetrimmer" class="dropdownpPopUp">
+              <mat-autocomplete #badgeAuto="matAutocomplete" [panelWidth]=100>
+                <mat-option *ngFor="let badge of badges$ | async" [value]="badge.code" style="font-weight: bold;">
                   {{badge.code}}
                 </mat-option>
               </mat-autocomplete>
