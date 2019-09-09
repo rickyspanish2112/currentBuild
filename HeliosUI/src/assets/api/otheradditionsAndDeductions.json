@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "Code": "ZZZ",
+    "Currency":"USD",
+    "Amount":"123.03"
+  },
+  {
+    "id": 2,
+    "Code": "BBB",
+    "Currency":"GBP",
+    "Amount":"100.03"
+  },
+  {
+    "id": 3,
+    "Code": "FFF",
+    "Currency":"ZAR",
+    "Amount":"110.00"
+  },
+  {
+    "id": 4,
+    "Code": "SSS",
+    "Currency":"USD",
+    "Amount":"12.03"
+  }
+]

@@ -21,6 +21,7 @@ import { ValuebuildupComponent } from './components/cds-declaraion/components/he
 import { PartyControlComponent } from './components/cds-declaraion/components/controls/partycontrol/party-control.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DeclarationtypetrimmerPipe } from './components/cds-declaraion/pipes/declarationtypetrimmer.pipe';
+import { ModalgridComponent } from './components/cds-declaraion/components/controls/modalgridcontrol/modalgrid.component';
 
 
 const routes: Routes = [
@@ -51,7 +52,8 @@ const routes: Routes = [
     TransportInfoComponent,
     ValuebuildupComponent,
     PartyControlComponent,
-    DeclarationtypetrimmerPipe
+    DeclarationtypetrimmerPipe,
+    ModalgridComponent
   ],
   imports: [CommonModule,
     HttpClientModule,

@@ -2,17 +2,50 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError, tap } from 'rxjs/operators';
 import { Declarationtype } from '../model/declarationtypes';
-import { throwError } from 'rxjs';
+import { throwError, BehaviorSubject } from 'rxjs';
 import { Badge } from '../model/badges';
 import { ArrivalTransportType } from '../model/arrivaltransporttypes';
+import { Port } from '../model/port';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class DeclarationService {
+  dataChange: BehaviorSubject<Port[]> = new BehaviorSubject<Port[]>([]);
+  // Temporarily stores data from dialogs
+  dialogData: any;
 
   constructor(private http: HttpClient) { }
+
+  get portAllPorts(): Port[] {
+    return this.dataChange.value;
+  }
+
+    /** CRUD METHODS */
+    getAllAdditionsAndDeductions(): void {
+
+      const PORTS_URL = '../../../assets/api/otheradditionsAndDeductions.json';
+
+      this.http.get<Port[]>(PORTS_URL).subscribe(data => {
+          this.dataChange.next(data);
+        },
+        (error: HttpErrorResponse) => {
+        console.log (error.name + ' ' + error.message);
+        });
+    }
+
+    addAdditionAndDeduction(issue: Port): void {
+      this.dialogData = issue;
+    }
+
+    updatePort(issue: Port): void {
+      this.dialogData = issue;
+    }
+
+    deleteAdditionAndDeduction(id: number): void {
+      console.log(id);
+    }
 
   getAllDeclarationTypes() {
     const declarationTypesUrl = '../../../assets/api/declarationtypes.json';
