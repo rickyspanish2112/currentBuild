@@ -1,26 +1,26 @@
 [
   {
     "id": 1,
-    "Code": "ZZZ",
-    "Currency":"USD",
-    "Amount":"123.03"
+    "code": "ZZZ",
+    "currency":"USD",
+    "amount":"123.03"
   },
   {
     "id": 2,
-    "Code": "BBB",
-    "Currency":"GBP",
-    "Amount":"100.03"
+    "code": "BBB",
+    "currency":"GBP",
+    "amount":"100.03"
   },
   {
     "id": 3,
-    "Code": "FFF",
-    "Currency":"ZAR",
-    "Amount":"110.00"
+    "code": "FFF",
+    "currency":"ZAR",
+    "amount":"110.00"
   },
   {
     "id": 4,
-    "Code": "SSS",
-    "Currency":"USD",
-    "Amount":"12.03"
+    "code": "SSS",
+    "currency":"USD",
+    "amount":"12.03"
   }
 ]

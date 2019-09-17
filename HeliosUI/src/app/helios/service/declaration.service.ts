@@ -19,7 +19,7 @@ export class DeclarationService {
 
   constructor(private http: HttpClient) { }
 
-  get portAllPorts(): OtherAdditionsAndDeductions[] {
+  get data(): OtherAdditionsAndDeductions[] {
     return this.dataChange.value;
   }
 
@@ -30,10 +30,11 @@ export class DeclarationService {
     /** CRUD METHODS */
     getAllAdditionsAndDeductions(): void {
 
-      const PORTS_URL = '../../../assets/api/otheradditionsAndDeductions.json';
+      const ADDITIONS_DEDUCTIONS_URL = '../../../assets/api/otheradditionsAndDeductions.json';
 
-      this.http.get<OtherAdditionsAndDeductions[]>(PORTS_URL).subscribe(data => {
+      this.http.get<OtherAdditionsAndDeductions[]>(ADDITIONS_DEDUCTIONS_URL).subscribe(data => {
           this.dataChange.next(data);
+          console.log( 'The following additions and deductions were ret transport types were returned: ' + JSON.stringify(data));
         },
         (error: HttpErrorResponse) => {
         console.log (error.name + ' ' + error.message);

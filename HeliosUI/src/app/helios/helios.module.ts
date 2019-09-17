@@ -21,7 +21,7 @@ import { ValuebuildupComponent } from './components/cds-declaraion/components/he
 import { PartyControlComponent } from './components/cds-declaraion/components/controls/partycontrol/party-control.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DeclarationtypetrimmerPipe } from './components/cds-declaraion/pipes/declarationtypetrimmer.pipe';
-import { ModalgridComponent } from './components/cds-declaraion/components/controls/modalgridcontrol/modalgrid.component';
+import { ModalgridComponent } from './components/cds-declaraion/components/controls/modalgridcontrol/modal.component';
 import { AddDialogComponent } from './components/cds-declaraion/components/controls/dialogs/add/add.component';
 import { EditDialogComponent } from './components/cds-declaraion/components/controls/dialogs/edit/edit-dialog.component';
 

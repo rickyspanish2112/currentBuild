@@ -11,11 +11,11 @@ import { EditDialogComponent } from '../dialogs/edit/edit-dialog.component';
 
 @Component({
   selector: 'app-modalgrid',
-  templateUrl: './modalgrid.component.html',
-  styleUrls: ['./modalgrid.component.scss']
+  templateUrl: './modal.component.html',
+  styleUrls: ['./modal.component.scss']
 })
 export class ModalgridComponent implements OnInit {
-  displayedColumns = ['code', 'currency',  'amount'];
+  displayedColumns = ['code', 'currency', 'amount'];
   declarationService: DeclarationService | null;
   dataSource: ExampleDataSource | null;
   index: number;
@@ -52,6 +52,10 @@ export class ModalgridComponent implements OnInit {
     });
   }
 
+  deleteItem() {
+
+  }
+
   private refreshTable() {
     // Refreshing table using paginator
     // Thanks yeager-j for tips
@@ -74,13 +78,13 @@ export class ModalgridComponent implements OnInit {
       });
   }
 
-  startEdit(i: number, code: string, name: string, city: string, state: string, country: string, runwayLength: string, type: string) {
+  startEdit(i: number, code: string, currency: string, amount: number) {
     this.code = code;
     // index row is used just for debugging proposes and can be removed
     this.index = i;
     console.log(this.index);
     const dialogRef = this.dialog.open(EditDialogComponent, {
-      data: { code, name, city, state, country, runwayLength, type }
+      data: { code, currency, amount}
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -134,8 +138,8 @@ export class ExampleDataSource extends DataSource<OtherAdditionsAndDeductions> {
 
     return merge(...displayDataChanges).pipe(map(() => {
       // Filter data
-      this.filteredData = this.declarationService.portAllPorts.slice().filter((issue: OtherAdditionsAndDeductions) => {
-        const searchStr = (issue.code + issue.code).toLowerCase();
+      this.filteredData = this.declarationService.data.slice().filter((issue: OtherAdditionsAndDeductions) => {
+        const searchStr = (issue.code).toLowerCase();
         return searchStr.indexOf(this.filter.toLowerCase()) !== -1;
       });
 
