@@ -1,5 +1,8 @@
+import { DecimalPipe } from '@angular/common';
+
 export class OtherAdditionsAndDeductions {
   id: number;
   code: string;
-  name: string;
+  currency: string;
+  amount: number;
 }

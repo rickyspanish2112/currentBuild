@@ -6,20 +6,25 @@ import { throwError, BehaviorSubject } from 'rxjs';
 import { Badge } from '../model/badges';
 import { ArrivalTransportType } from '../model/arrivaltransporttypes';
 import { Port } from '../model/port';
+import { OtherAdditionsAndDeductions } from '../model/otheradditionsAndDeductions';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class DeclarationService {
-  dataChange: BehaviorSubject<Port[]> = new BehaviorSubject<Port[]>([]);
+  dataChange: BehaviorSubject<OtherAdditionsAndDeductions[]> = new BehaviorSubject<OtherAdditionsAndDeductions[]>([]);
   // Temporarily stores data from dialogs
   dialogData: any;
 
   constructor(private http: HttpClient) { }
 
-  get portAllPorts(): Port[] {
+  get portAllPorts(): OtherAdditionsAndDeductions[] {
     return this.dataChange.value;
+  }
+
+  getDialogData() {
+    return this.dialogData;
   }
 
     /** CRUD METHODS */
@@ -27,7 +32,7 @@ export class DeclarationService {
 
       const PORTS_URL = '../../../assets/api/otheradditionsAndDeductions.json';
 
-      this.http.get<Port[]>(PORTS_URL).subscribe(data => {
+      this.http.get<OtherAdditionsAndDeductions[]>(PORTS_URL).subscribe(data => {
           this.dataChange.next(data);
         },
         (error: HttpErrorResponse) => {
@@ -35,11 +40,11 @@ export class DeclarationService {
         });
     }
 
-    addAdditionAndDeduction(issue: Port): void {
+    addAdditionAndDeduction(issue: OtherAdditionsAndDeductions): void {
       this.dialogData = issue;
     }
 
-    updatePort(issue: Port): void {
+    updatePort(issue: OtherAdditionsAndDeductions): void {
       this.dialogData = issue;
     }
 

@@ -1,10 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { Port } from 'src/app/helios/model/port';
-import { Observable, merge, BehaviorSubject } from 'rxjs';
-import { MatSort, MatPaginator } from '@angular/material';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Observable, merge, BehaviorSubject, fromEvent } from 'rxjs';
+import { MatSort, MatPaginator, MatDialog } from '@angular/material';
 import { DeclarationService } from 'src/app/helios/service/declaration.service';
 import { DataSource } from '@angular/cdk/table';
 import { map } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+import { AddDialogComponent } from '../dialogs/add/add.component';
+import { OtherAdditionsAndDeductions } from 'src/app/helios/model/otheradditionsAndDeductions';
+import { EditDialogComponent } from '../dialogs/edit/edit-dialog.component';
 
 @Component({
   selector: 'app-modalgrid',
@@ -12,20 +15,89 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./modalgrid.component.scss']
 })
 export class ModalgridComponent implements OnInit {
-  displayedColumns = ['code', 'name',  'city', 'state', 'country',  'runwayLength', 'type', 'actions'];
+  displayedColumns = ['code', 'currency',  'amount'];
   declarationService: DeclarationService | null;
   dataSource: ExampleDataSource | null;
   index: number;
   code: string;
 
-  constructor() { }
+  constructor(public httpClient: HttpClient,
+              public dialog: MatDialog,
+              public dataService: DeclarationService) { }
+
+              @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
+              @ViewChild(MatSort, { static: true }) sort: MatSort;
+              @ViewChild('filter', { static: true }) filter: ElementRef;
 
   ngOnInit() {
+    this.loadData();
+  }
+
+  refresh() {
+    this.loadData();
+  }
+
+  addNew(port: OtherAdditionsAndDeductions) {
+    const dialogRef = this.dialog.open(AddDialogComponent, {
+      data: { OtherAdditionsAndDeductions: port }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result === 1) {
+        // After dialog is closed we're doing frontend updates
+        // For add we're just pushing a new row inside DataService
+        this.declarationService.dataChange.value.push(this.dataService.getDialogData());
+        this.refreshTable();
+      }
+    });
+  }
+
+  private refreshTable() {
+    // Refreshing table using paginator
+    // Thanks yeager-j for tips
+    // https://github.com/marinantonio/angular-mat-table-crud/issues/12
+    this.paginator._changePageSize(this.paginator.pageSize);
+  }
+
+
+  public loadData() {
+    this.declarationService = new DeclarationService(this.httpClient);
+    this.dataSource = new ExampleDataSource(this.declarationService, this.paginator, this.sort);
+    fromEvent(this.filter.nativeElement, 'keyup')
+      // .debounceTime(150)
+      // .distinctUntilChanged()
+      .subscribe(() => {
+        if (!this.dataSource) {
+          return;
+        }
+        this.dataSource.filter = this.filter.nativeElement.value;
+      });
+  }
+
+  startEdit(i: number, code: string, name: string, city: string, state: string, country: string, runwayLength: string, type: string) {
+    this.code = code;
+    // index row is used just for debugging proposes and can be removed
+    this.index = i;
+    console.log(this.index);
+    const dialogRef = this.dialog.open(EditDialogComponent, {
+      data: { code, name, city, state, country, runwayLength, type }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result === 1) {
+        // When using an edit things are little different, firstly we find record inside DataService by id
+        const foundIndex = this.declarationService.dataChange.value.findIndex(x => x.code === this.code);
+        // Then you update that record using data from dialogData (values you enetered)
+        this.declarationService.dataChange.value[foundIndex] = this.dataService.getDialogData();
+        // And lastly refresh table
+        this.refreshTable();
+      }
+    });
   }
 
 }
 
-export class ExampleDataSource extends DataSource<Port> {
+export class ExampleDataSource extends DataSource<OtherAdditionsAndDeductions> {
   filterChange = new BehaviorSubject('');
 
   get filter(): string {
@@ -36,8 +108,8 @@ export class ExampleDataSource extends DataSource<Port> {
     this.filterChange.next(filter);
   }
 
-  filteredData: Port[] = [];
-  renderedData: Port[] = [];
+  filteredData: OtherAdditionsAndDeductions[] = [];
+  renderedData: OtherAdditionsAndDeductions[] = [];
 
   constructor(public declarationService: DeclarationService,
               public paginator: MatPaginator,
@@ -48,7 +120,7 @@ export class ExampleDataSource extends DataSource<Port> {
   }
 
   /** Connect function called by the table to retrieve one stream containing the data to render. */
-  connect(): Observable<Port[]> {
+  connect(): Observable<OtherAdditionsAndDeductions[]> {
     // Listen for any changes in the base data, sorting, filtering, or pagination
     const displayDataChanges = [
       this.declarationService.dataChange,
@@ -62,8 +134,8 @@ export class ExampleDataSource extends DataSource<Port> {
 
     return merge(...displayDataChanges).pipe(map(() => {
       // Filter data
-      this.filteredData = this.declarationService.portAllPorts.slice().filter((issue: Port) => {
-        const searchStr = (issue.code + issue.name).toLowerCase();
+      this.filteredData = this.declarationService.portAllPorts.slice().filter((issue: OtherAdditionsAndDeductions) => {
+        const searchStr = (issue.code + issue.code).toLowerCase();
         return searchStr.indexOf(this.filter.toLowerCase()) !== -1;
       });
 
@@ -81,7 +153,7 @@ export class ExampleDataSource extends DataSource<Port> {
   disconnect() { }
 
   /** Returns a sorted copy of the database data. */
-  sortData(data: Port[]): Port[] {
+  sortData(data: OtherAdditionsAndDeductions[]): OtherAdditionsAndDeductions[] {
     if (!this.sort.active || this.sort.direction === '') {
       return data;
     }
@@ -92,7 +164,7 @@ export class ExampleDataSource extends DataSource<Port> {
 
       switch (this.sort.active) {
         case 'code': [propertyA, propertyB] = [a.code, b.code]; break;
-        case 'name': [propertyA, propertyB] = [a.name, b.name]; break;
+        case 'name': [propertyA, propertyB] = [a.currency, b.currency]; break;
       }
 
       const valueA = isNaN(+propertyA) ? propertyA : +propertyA;
