@@ -1,3 +1,14 @@
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  // justify-content: space-between;
+  text-align: right;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+
 tr.spaceUnder>td {
   padding-bottom: 5px;
 }

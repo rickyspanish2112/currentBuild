@@ -27,7 +27,7 @@ export class ModalgridComponent implements OnInit {
 
               @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
               @ViewChild(MatSort, { static: true }) sort: MatSort;
-              @ViewChild('filter', { static: true }) filter: ElementRef;
+             // @ViewChild('filter', { static: true }) filter: ElementRef;
 
   ngOnInit() {
     this.loadData();
@@ -67,7 +67,7 @@ export class ModalgridComponent implements OnInit {
   public loadData() {
     this.declarationService = new DeclarationService(this.httpClient);
     this.dataSource = new ExampleDataSource(this.declarationService, this.paginator, this.sort);
-    fromEvent(this.filter.nativeElement, 'keyup')
+/*     fromEvent(this.filter.nativeElement, 'keyup')
       // .debounceTime(150)
       // .distinctUntilChanged()
       .subscribe(() => {
@@ -75,7 +75,7 @@ export class ModalgridComponent implements OnInit {
           return;
         }
         this.dataSource.filter = this.filter.nativeElement.value;
-      });
+      }); */
   }
 
   startEdit(i: number, code: string, currency: string, amount: number) {
