@@ -1,29 +1,18 @@
-
-.flex-container {
-  display: flex;
-  flex-direction: row;
-  // justify-content: space-between;
-  text-align: right;
-  margin-top: 10px;
-  flex-wrap: wrap;
+table.unstyledTable {
+  width: 735px;
+  margin-top: 0px;
+}
+table.unstyledTable td, table.unstyledTable th {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px;
 }
 
-
-tr.spaceUnder>td {
-  padding-bottom: 5px;
+table.unstyledTable thead {
+  background: #DDDDDD;
 }
-
-
-.filterInput {
-  width: 100px;
-  height: 15px;
-  border: 1px gray solid;
+table.unstyledTable thead th {
+  font-weight: normal;
 }
-
-.form {
-  border: 1px gray solid;
-  width: 97%;
-  border-radius: 5px;
-  text-align: left;
-
+table.unstyledTable tfoot {
+  font-weight: bold;
 }

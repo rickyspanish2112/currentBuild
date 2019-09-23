@@ -20,14 +20,18 @@
 
 .transportInfoFlexItem {
   flex-grow: 5;
-  border-radius: 7px;
+ // border-radius: 7px;
 }
 
 .valueBuildUpFlexitem {
   flex-grow: 1;
-  border-radius: 7px;
+//  border-radius: 7px;
   margin-left: 2.5px;
 
+}
+
+.otherAdditionsDeductionsFlexItem {
+  flex-grow: 5;
 }
 
 .partyExpansionPanel {
