@@ -22,9 +22,6 @@ import { PartyControlComponent } from './components/cds-declaraion/components/co
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DeclarationtypetrimmerPipe } from './components/cds-declaraion/pipes/declarationtypetrimmer.pipe';
 import { ModalgridComponent } from './components/cds-declaraion/components/controls/modalgridcontrol/modal.component';
-import { AddDialogComponent } from './components/cds-declaraion/components/controls/dialogs/add/add.component';
-import { EditDialogComponent } from './components/cds-declaraion/components/controls/dialogs/edit/edit-dialog.component';
-
 
 const routes: Routes = [
   {
@@ -55,9 +52,7 @@ const routes: Routes = [
     ValuebuildupComponent,
     PartyControlComponent,
     DeclarationtypetrimmerPipe,
-    ModalgridComponent,
-    AddDialogComponent,
-    EditDialogComponent
+    ModalgridComponent
   ],
   imports: [CommonModule,
     HttpClientModule,

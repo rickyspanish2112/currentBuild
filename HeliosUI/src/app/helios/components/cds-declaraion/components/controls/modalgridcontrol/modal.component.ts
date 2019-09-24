@@ -5,9 +5,7 @@ import {DeclarationService} from 'src/app/helios/service/declaration.service';
 import {DataSource} from '@angular/cdk/table';
 import {map} from 'rxjs/operators';
 import {HttpClient} from '@angular/common/http';
-import {AddDialogComponent} from '../dialogs/add/add.component';
 import {OtherAdditionsAndDeductions} from 'src/app/helios/model/otheradditionsAndDeductions';
-import {EditDialogComponent} from '../dialogs/edit/edit-dialog.component';
 
 export interface Grid {
     index: number;
