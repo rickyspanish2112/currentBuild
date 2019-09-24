@@ -21,7 +21,8 @@ import { ValuebuildupComponent } from './components/cds-declaraion/components/he
 import { PartyControlComponent } from './components/cds-declaraion/components/controls/partycontrol/party-control.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DeclarationtypetrimmerPipe } from './components/cds-declaraion/pipes/declarationtypetrimmer.pipe';
-import { ModalgridComponent } from './components/cds-declaraion/components/controls/modalgridcontrol/modal.component';
+// tslint:disable-next-line:max-line-length
+import { ModalgridComponent } from './components/cds-declaraion/components/controls/grids/additionsanddeductionsgrid/additonsanddeductionsgrid.component';
 
 const routes: Routes = [
   {
