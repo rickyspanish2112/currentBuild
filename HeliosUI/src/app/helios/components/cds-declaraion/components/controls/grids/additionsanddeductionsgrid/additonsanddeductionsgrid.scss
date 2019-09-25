@@ -1,20 +1,12 @@
-table.unstyledTable {
-  width: 735px;
-  margin-top: 0px;
-}
-table.unstyledTable td, table.unstyledTable th {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 12px;
+input {
+  text-align: left;
+  border: black 1px solid;
+  width: 50px;
+  height: 20px;
 }
 
-table.unstyledTable thead {
-  background: #DDDDDD;
-}
-table.unstyledTable thead th {
-  font-weight: normal;
-}
-table.unstyledTable tfoot {
-  font-weight: bold;
+.table-container {
+  width: 100%;
 }
 
 .grandParent {
@@ -27,7 +19,8 @@ table.unstyledTable tfoot {
 
 .child {
   position: absolute;
-  top: -10px;
+  top: -18px;
+  left: 0px;
   width: 450px;
 }
 
@@ -35,4 +28,6 @@ table.unstyledTable tfoot {
   min-width: 40px;
   max-width: 40px;
   width: 40px;
+  height: 20px;
+  border: black 1px solid;
 }

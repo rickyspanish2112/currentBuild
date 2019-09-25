@@ -1,0 +1,50 @@
+.lookup-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 400px;
+  width: 400px;
+  border: 2px gray solid;
+  border-radius: 5px;
+}
+
+.filterBar {
+  background-color: lightblue;
+  text-align: left;
+  padding: 12px 2px;
+  margin-bottom: 24px
+}
+
+.mat-table {
+  overflow: auto;
+  max-height: 180px;
+  margin-top: -30px;
+  height: 180px;
+}
+
+.tableHeader {
+  font-weight: bold;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px;
+}
+
+.my-mat-row {
+  align-items: stretch;
+  padding: 5px 0;
+  border: 1px lightgray solid;
+  border-radius: 2px;
+  height: 30px;
+  min-height: 30px;
+}
+
+.my-mat-cell {
+  cursor: pointer;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px;
+  height: 30px;
+  min-height: 30px;
+}
+
+.my-mat-cell:hover {
+  background: #f5f5f5;
+}

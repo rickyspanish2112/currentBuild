@@ -23,6 +23,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DeclarationtypetrimmerPipe } from './components/cds-declaraion/pipes/declarationtypetrimmer.pipe';
 // tslint:disable-next-line:max-line-length
 import { ModalgridComponent } from './components/cds-declaraion/components/controls/grids/additionsanddeductionsgrid/additonsanddeductionsgrid.component';
+import { LookuppopupComponent } from './components/cds-declaraion/components/controls/dialogs/lookuppopup/lookuppopup.component';
 
 const routes: Routes = [
   {
@@ -53,7 +54,8 @@ const routes: Routes = [
     ValuebuildupComponent,
     PartyControlComponent,
     DeclarationtypetrimmerPipe,
-    ModalgridComponent
+    ModalgridComponent,
+    LookuppopupComponent
   ],
   imports: [CommonModule,
     HttpClientModule,

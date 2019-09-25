@@ -21,7 +21,7 @@ const ELEMENT_DATA: AddiionsAndDeductionsGrid[] = [];
 export class ModalgridComponent implements OnInit {
   expanded = false;
   tableHeaderRow = 'Additions and Deductions';
-  columns = ['code', 'currency', 'amount', 'add'];
+  columns = ['code', 'currency', 'add'];
   dataSource: MatTableDataSource<AddiionsAndDeductionsGrid>;
   codeLookupInput: string;
   dataSourceIndex: number;
@@ -39,6 +39,25 @@ export class ModalgridComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
     this.dataSourceIndex = 0;
+  }
+
+  closeLookupHandler(element: any) {
+    console.log('Close lookup event received');
+    element.expanded = false;
+  }
+
+  updateAdditionalCodeHandler(event: any, element: any) {
+    console.log('Update Addition Code event received: ' + event.code);
+    element.expanded = false;
+    this.updateSelectedDataRow(this.tableRowIndex, event.code);
+  }
+
+  private updateSelectedDataRow(tableRowIndex: number, code: any) {
+    const matchedData = ELEMENT_DATA.find(x => x.index === tableRowIndex);
+    console.log('Found matching array data at index: ' + tableRowIndex);
+
+    console.log('About to update datasource with Additonal code value: ' + code);
+    matchedData.code = code;
   }
 
   addRow() {
